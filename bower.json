@@ -1,0 +1,24 @@
+{
+  "name": "Sherlock",
+  "main": "sherlock.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bastuijnman/sherlock",
+  "authors": [
+    "Bas Tuijnman <bas.tuijnman@24i.com>"
+  ],
+  "description": "Sherlock remote debugger",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/server/public/assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "*",
+    "react": "~0.12.1"
+  }
+}

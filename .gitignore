@@ -29,3 +29,6 @@ node_modules
 
 # Webstorm files
 .idea
+
+# Bower files
+src/server/public/assets/*
