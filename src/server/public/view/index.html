@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/materialize/bin/materialize.css" />
+    <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+    <script src="assets/react/react.js"></script>
+    <script src="assets/react/JSXTransformer.js"></script>
+    <script type="text/jsx" src="debugger.js"></script>
+
+    <style>
+        .line > ul {
+            margin: 0;
+            padding-left: 50px;
+        }
+        .line > pre {
+            margin: 0;
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .line > pre:hover {
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+    </style>
+    <title>Sherlock</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <ul class="left">
+                <li><a href="#elements">Elements</a></li>
+                <li><a href="#network">Network</a></li>
+                <li><a href="#console">Console</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="dom-tree"></div>
+</body>
+</html>
