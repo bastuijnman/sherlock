@@ -31,4 +31,4 @@ node_modules
 .idea
 
 # Bower files
-src/server/public/assets/*
+src/server/public/assets
