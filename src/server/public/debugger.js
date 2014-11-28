@@ -62,6 +62,10 @@ window.onload = function() {
             );
         });
 
+        socket.on('console.log', function(data) {
+           console.log(data);
+        });
+
     } else {
         console.error('Sherlock wants to connect, but sockets are not available');
     }

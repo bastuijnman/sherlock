@@ -13,6 +13,10 @@ module.exports = function(port) {
                 dom: v
             });
         });
+
+        socket.on('console.log', function(data) {
+            io.sockets.emit('console.log', data);
+        });
     });
 
     server.listen(port);
