@@ -44,7 +44,6 @@ module.exports = function(grunt) {
                     include: ['client'],
                     insertRequire: ['client'],
                     out: './bin/public/client.min.js',
-                    optimize: 'none',
                     wrap: true
                 }
             },
@@ -58,7 +57,6 @@ module.exports = function(grunt) {
                     include: ['debugger'],
                     insertRequire: ['debugger'],
                     out: './bin/public/debugger.min.js',
-                    optimize: 'none',
                     wrap: true
                 }
             }
