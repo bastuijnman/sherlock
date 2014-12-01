@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var sherlock = require('commander'),
-    server = require('./src/server/server')
+    server = require('./bin/server')
     pkg = require('./package.json');
 
 sherlock

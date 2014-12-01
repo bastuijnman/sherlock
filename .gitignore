@@ -33,6 +33,5 @@ node_modules
 # Bower files
 src/server/public/assets
 
-# temp build files
-src/server/public/connector.js
-src/server/public/connector.js.map
+# Build folder
+bin

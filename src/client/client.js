@@ -1,4 +1,4 @@
-import Logger from './logger';
+import Logger from 'logger';
 
 if (typeof io !== 'undefined') {
 
@@ -8,11 +8,11 @@ if (typeof io !== 'undefined') {
     /**
      * Dirty hack to send loaded DOM when window is loaded
      */
-    window.onload = function() {
+    (function() {
         socket.emit('dom', {
             tree: document.documentElement.outerHTML
         });
-    }
+    })();
 
 } else {
     console.error('Sherlock wants to connect, but sockets are not available');
