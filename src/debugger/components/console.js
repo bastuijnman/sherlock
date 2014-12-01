@@ -10,7 +10,7 @@ var Console = React.createClass({
 
     add: function(data) {
         this.setState({
-            children: this.state.children.concat([React.createElement(Item, {line:data})])
+            children: this.state.children.concat([React.createElement(Item, data)])
         });
     },
 
