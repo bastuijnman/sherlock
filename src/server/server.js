@@ -9,13 +9,12 @@ module.exports = function(port) {
             var vdom = require('./vdom/vdom'),
                 v = vdom.parse(data.tree);
 
-            io.sockets.emit('debugger_dom', {
+            io.sockets.emit('dom', {
                 dom: v
             });
         });
 
-        socket.on('logger', function(data) {
-            console.log('got log');
+        socket.on('console.log', function(data) {
             io.sockets.emit('console.log', data);
         });
     });

@@ -15,7 +15,6 @@ var TreeNode = React.createClass({
     render: function() {
 
         var children = this.props.node.children.map(function(node, index) {
-            //return <li><TreeNode node={node} /></li>
             return React.createElement('li', null,
                 React.createElement(TreeNode, { node: node})
             );

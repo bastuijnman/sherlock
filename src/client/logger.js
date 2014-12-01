@@ -8,10 +8,10 @@ export default function Logger(socket) {
             warning: console.warning
         };
 
-        window.console.log = function() {
+        console.log = function() {
             methods.log.apply(console, arguments);
-            socket.emit('logger', arguments);
+            socket.emit('console.log', arguments);
         };
-        //console.log(console.log);
+
     }
 };
