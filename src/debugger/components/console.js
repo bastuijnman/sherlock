@@ -9,8 +9,23 @@ var Console = React.createClass({
     },
 
     add: function(data) {
+        var children = this.state.children.slice();
+
+        for(var item in data.items) {
+            children.push(React.createElement(Item, {
+                type: data.type,
+                content: data.items[item]
+            }));
+        }
+
         this.setState({
-            children: this.state.children.concat([React.createElement(Item, data)])
+            children: children
+        });
+    },
+
+    clear: function() {
+        this.setState({
+            children: []
         });
     },
 

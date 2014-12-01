@@ -13,12 +13,17 @@
     <title>Sherlock Demo</title>
 </head>
 <body>
-    <h1>This is a demo</h1>
+    <h1 id="header">This is a demo</h1>
     <p>Paragraph element</p>
     <script>
         (function() {
             setTimeout(function() {
                 console.log('This is a console log');
+                console.log({
+                    property1: 'blaat',
+                    property2: 'test'
+                });
+                console.log(document.getElementById('header'));
             }, 2000);
         })();
     </script>

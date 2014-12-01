@@ -1,12 +1,11 @@
 export default function Logger(container, socket) {
 
-    socket.on('console.log', function(data) {
+    socket.on('console', function(data) {
 
-        for(var item in data) {
-            container.add({
-                line: data[item]
-            });
-        }
+        container.add({
+            type: data.type,
+            items: data.args
+        });
 
     });
 

@@ -9,8 +9,27 @@ export default function Logger(socket) {
         };
 
         console.log = function() {
-            methods.log.apply(console, arguments);
-            socket.emit('console.log', arguments);
+
+            var args = Array.prototype.slice.call(arguments, 0);
+            for(var arg in args) {
+                if(args[arg] instanceof HTMLElement) {
+                    args[arg] = args[arg].outerHTML;
+                }
+            }
+
+            methods.log.apply(console, args);
+            socket.emit('console', {
+                args: args,
+                type: 'log'
+            });
+        };
+
+        console.error = function() {
+            methods.error.apply(console, arguments);
+            socket.emit('console', {
+                args: arguments,
+                type: 'error'
+            });
         };
 
     }

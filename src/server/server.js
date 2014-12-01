@@ -14,8 +14,8 @@ module.exports = function(port) {
             });
         });
 
-        socket.on('console.log', function(data) {
-            io.sockets.emit('console.log', data);
+        socket.on('console', function(data) {
+            io.sockets.emit('console', data);
         });
     });
 
