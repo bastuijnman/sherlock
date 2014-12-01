@@ -16,7 +16,11 @@
     <h1>This is a demo</h1>
     <p>Paragraph element</p>
     <script>
-        window.console.log('HAAAAAAi');
+        (function() {
+            setTimeout(function() {
+                console.log('This is a console log');
+            }, 2000);
+        })();
     </script>
 </body>
 </html>

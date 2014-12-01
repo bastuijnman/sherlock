@@ -21,23 +21,43 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'src/client/',
                         src: ['**/*.js'],
-                        dest: 'bin/tmp/'
+                        dest: 'bin/tmp/client'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/debugger/',
+                        src: ['**/*.js'],
+                        dest: 'bin/tmp/debugger'
                     }
                 ]
             }
         },
 
         requirejs: {
-            build: {
+            buildClient: {
                 options: {
                     paths: {
-                        'lib': '../../lib'
+                        'lib': '../../../lib'
                     },
-                    baseUrl: './bin/tmp',
+                    baseUrl: './bin/tmp/client',
                     name: 'lib/almond',
                     include: ['client'],
                     insertRequire: ['client'],
                     out: './bin/public/client.min.js',
+                    optimize: 'none',
+                    wrap: true
+                }
+            },
+            buildDebugger: {
+                options: {
+                    paths: {
+                        'lib': '../../../lib'
+                    },
+                    baseUrl: './bin/tmp/debugger',
+                    name: 'lib/almond',
+                    include: ['debugger'],
+                    insertRequire: ['debugger'],
+                    out: './bin/public/debugger.min.js',
                     optimize: 'none',
                     wrap: true
                 }

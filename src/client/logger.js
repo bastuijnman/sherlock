@@ -1,5 +1,6 @@
 export default function Logger(socket) {
     if(typeof window.console !== 'undefined' && console.log !== 'undefined') {
+
         var methods = {
             log: console.log,
             info: console.info,
@@ -7,9 +8,9 @@ export default function Logger(socket) {
             warning: console.warning
         };
 
-        console.log = function() {
+        window.console.log = function() {
             methods.log.apply(console, arguments);
-            socket.emit('console.log', arguments);
+            socket.emit('logger', arguments);
         };
         //console.log(console.log);
     }

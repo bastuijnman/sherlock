@@ -14,7 +14,8 @@ module.exports = function(port) {
             });
         });
 
-        socket.on('console.log', function(data) {
+        socket.on('logger', function(data) {
+            console.log('got log');
             io.sockets.emit('console.log', data);
         });
     });
