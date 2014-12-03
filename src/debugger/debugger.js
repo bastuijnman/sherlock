@@ -11,7 +11,7 @@ import Utils from 'utils';
         socket.on('dom', function (data) {
             React.renderComponent(
                 React.createElement(TreeNode, {node: data.dom}),
-                document.getElementById('dom-tree')
+                document.getElementById('elements')
             );
         });
 
