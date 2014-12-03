@@ -1,3 +1,8 @@
+/**
+ * The Router object, handles adding and running routes
+ * @author Bas Tuijnman
+ * @type {Object}
+ */
 var Router = {
 
 	/**

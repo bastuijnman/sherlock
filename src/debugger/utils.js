@@ -1,5 +1,9 @@
 export default { 
 
+	/**
+	 * Allow switching components by removing/adding active class
+	 * @param  {String} id The ID for the DOM element which needs to be activated
+	 */
 	switchToComponent: function(id) {
 		var component = document.getElementById(id);
 
