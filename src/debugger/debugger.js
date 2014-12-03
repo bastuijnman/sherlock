@@ -17,14 +17,6 @@ import Logger from 'logger';
             React.createElement(Console),
             document.getElementById('console')
         ), socket);
-        /*
-        socket.on('console.log', function (data) {
-            for (var item in data) {
-                Console.add(data[item]);
-                //document.getElementById('console').innerHTML += '<pre class="row">' + data[item] + '</pre>';
-            }
-        });*/
-
     } else {
         console.error('Sherlock wants to connect, but sockets are not available');
     }
