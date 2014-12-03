@@ -9,6 +9,13 @@
     <script src="debugger.min.js"></script>
 
     <style>
+        .component {
+            display: none;
+        }
+        .component.active {
+            display: block;
+        }
+
         .line > ul {
             margin: 0;
             padding-left: 50px;
@@ -40,13 +47,13 @@
     <nav>
         <div class="nav-wrapper">
             <ul class="left">
-                <li><a href="#elements">Elements</a></li>
-                <li><a href="#network">Network</a></li>
-                <li><a href="#console">Console</a></li>
+                <li><a href="elements" data-route>Elements</a></li>
+                <li><a href="network" data-route>Network</a></li>
+                <li><a href="console" data-route>Console</a></li>
             </ul>
         </div>
     </nav>
-    <div id="dom-tree"></div>
-    <div id="console"></div>
+    <div id="dom-tree" class="component active"></div>
+    <div id="console" class="component"></div>
 </body>
 </html>
