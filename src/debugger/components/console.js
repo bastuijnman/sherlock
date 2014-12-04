@@ -14,7 +14,7 @@ var Console = React.createClass({
         for(var item in data.items) {
             children.push(React.createElement(Item, {
                 type: data.type,
-                content: data.items[item]
+                item: data.items[item]
             }));
         }
 

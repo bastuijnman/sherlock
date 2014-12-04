@@ -5,12 +5,16 @@ var Item = React.createClass({
 
     render: function() {
 
-        if(typeof this.props.content === 'string') {
-            return React.createElement('pre', {className: 'item ' + this.props.type}, this.props.content);
-        }
-
-        if(typeof this.props.content === 'object') {
-            return React.createElement(ObjectItem, {className:'item'}, this.props.content);
+        switch(this.props.item.type) {
+            case 'string':
+                return React.createElement('pre', {className: 'item ' + this.props.type}, this.props.item.content);
+                break;
+            case 'object':
+                return React.createElement(ObjectItem, {className:'item'}, this.props.item.content);
+                break;
+            default:
+                return React.createElement('pre', {className: 'item ' + this.props.type}, this.props.item.content);
+                break;
         }
     }
 

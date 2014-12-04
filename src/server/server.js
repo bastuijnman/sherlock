@@ -15,6 +15,11 @@ module.exports = function(port) {
         });
 
         socket.on('console', function(data) {
+            for(var item in data.items) {
+                if(data.items[item].type === 'html') {
+                    data.items[item]
+                }
+            }
             io.sockets.emit('console', data);
         });
     });
