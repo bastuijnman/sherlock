@@ -31,6 +31,7 @@ import Utils from 'utils';
                 Utils.switchToComponent('network')
             }).
             run();
+
     } else {
         console.error('Sherlock wants to connect, but sockets are not available');
     }
