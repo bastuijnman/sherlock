@@ -10,6 +10,9 @@ module.exports = function(grunt) {
             },
             tmp: {
                 src: ['bin/tmp']
+            },
+            doc: {
+                src: ['doc/']
             }
         },
 
@@ -73,6 +76,16 @@ module.exports = function(grunt) {
                     }
                 ]
             }
+        },
+
+        jsdoc: {
+            build: {
+                src: ['src/**/*.js'],
+                options: {
+                    destination: 'doc/',
+                    configure: 'jsdoc.json'
+                }
+            }
         }
 
     });
@@ -81,8 +94,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-jsdoc');
 
     grunt.registerTask('build', ['clean', 'transpile', 'requirejs', 'clean:tmp', 'copy']);
+    grunt.registerTask('doc', ['jsdoc']);
     //grunt.registerTask('build', ['clean', 'transpile', 'requirejs']);
 
 }
