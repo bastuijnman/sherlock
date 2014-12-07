@@ -60,6 +60,7 @@ module.exports = function(grunt) {
                     include: ['debugger'],
                     insertRequire: ['debugger'],
                     out: './bin/public/debugger.min.js',
+                    optimize: 'none',
                     wrap: true
                 }
             }
@@ -86,6 +87,14 @@ module.exports = function(grunt) {
                     configure: 'jsdoc.json'
                 }
             }
+        },
+
+        less: {
+            build: {
+                files: {
+                    'src/server/public/assets/debugger.css': 'src/debugger/assets/base.less'
+                }
+            }
         }
 
     });
@@ -94,9 +103,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-jsdoc');
 
-    grunt.registerTask('build', ['clean', 'transpile', 'requirejs', 'clean:tmp', 'copy']);
+    grunt.registerTask('build', ['clean', 'less', 'transpile', 'requirejs', 'clean:tmp', 'copy']);
     grunt.registerTask('doc', ['jsdoc']);
     //grunt.registerTask('build', ['clean', 'transpile', 'requirejs']);
 
