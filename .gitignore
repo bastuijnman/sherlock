@@ -36,5 +36,5 @@ bower_components
 # Build folder
 bin
 
-# Compiled css file
-src/server/public/assets/debugger.css
+# Compiled css files
+src/server/public/assets

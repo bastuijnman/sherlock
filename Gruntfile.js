@@ -71,6 +71,12 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
+                        cwd: 'bower_components/fontawesome/',
+                        src: 'fonts/**',
+                        dest: 'src/server/public/assets'
+                    },
+                    {
+                        expand: true,
                         cwd: 'src/server/',
                         src: '**',
                         dest: 'bin'
