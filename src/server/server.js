@@ -8,8 +8,9 @@ module.exports = function(port) {
         socket.on('dom', function (data) {
             var vdom = require('./vdom/vdom'),
                 v = vdom.parse(data.tree);
-
+            
             io.sockets.emit('dom', {
+                styles: data.styles,
                 dom: v
             });
         });
