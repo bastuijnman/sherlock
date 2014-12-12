@@ -31,13 +31,16 @@
 			}
 
 			.tabs-nav > a {
+				cursor: pointer;
 				display: inline-block;
 				font-weight: bold;
 				padding: 0.5em;
 
+				border: 1px solid rgba(0, 0, 0, 0);
+				border-bottom: none;
+
 				&.active {
-					border: 1px solid rgba(0, 0, 0, 0.1);
-					border-bottom: none;
+					border-color: rgba(0, 0, 0, 0.1);
 				}
 			}
 
@@ -54,6 +57,7 @@
 
 			.header {
 				font-size: 0.75em;
+				padding: 0.5em 0 0 0;
 				.key {
 					font-weight: bold;
 				}
@@ -61,6 +65,8 @@
 
 			.response {
 				white-space: pre-wrap;
+				font-size: 0.75em;
+				font-family: monaco, monospace;
 			}
 		}
 	}
