@@ -1,0 +1,28 @@
+# Dependencies
+markdown:            redcarpet
+highlighter:         pygments
+
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               Sherlock
+tagline:             'Remote debugger'
+description:         'A lean mean debugger for your devices'
+url:                 http://bastuijnman.github.io/sherlock
+baseurl:             /
+paginate:            5
+
+# About/contact
+author:
+  name:              Bas Tuijnman
+  url:               https://twitter.com/bastuijnman
+  email:             bas.tuijnman@gmail.com
+
+# Custom vars
+version:             1.0.0
+github:
+  repo:				 http://github.com/bastuijnman/sherlock
