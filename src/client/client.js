@@ -10,7 +10,6 @@ if (typeof io !== 'undefined') {
      * Dirty hack to send loaded DOM when window is loaded
      */
     (function() {
-        console.log(CssTransformer(document.styleSheets));
         socket.emit('dom', {
             tree: document.documentElement.outerHTML
         });
