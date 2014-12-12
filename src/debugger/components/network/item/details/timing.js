@@ -1,6 +1,6 @@
 var Timing = React.createClass({
 	render: function() {
-		return React.createElement('div', {}, 'Timing');
+		return React.createElement('div', {}, 'Response time: ' + this.props.item.response.time + ' ms');
 	}
 });
 

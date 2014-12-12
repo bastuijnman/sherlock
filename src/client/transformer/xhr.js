@@ -8,7 +8,8 @@ var Transformer = function(xhr) {
 		response: {
 			headers: xhr.getAllResponseHeaders(),
 			url: xhr.responseURL,
-			responseText: xhr.responseText
+			responseText: xhr.responseText,
+			time: xhr.responseTime
 		}
 	};
 

@@ -24,9 +24,20 @@ export default function NetworkLogger(requestCallback, responseCallback) {
             // TODO: Need fix for the request when calling the request callback
             // The reqeust is now not being sent when calling the callback
             requestCallback(this);
+
+            // Get the starting point in time (milliseconds)
+            var start = new Date().getTime();
+
             if (this.addEventListener) {
                 var self = this;
                 this.addEventListener("readystatechange", function () {
+
+                    // XHR request is completed, so set the responsetime
+                    if(self.readyState === COMPLETED_READY_STATE) {
+                        var end = new Date().getTime();
+                        self.responseTime = end - start;
+                    }
+
                     callResponseCallback(self);
                 }, false);
             } else {
