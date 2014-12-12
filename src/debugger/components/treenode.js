@@ -38,13 +38,18 @@ var TreeNode = React.createClass({
             }
         }
 
-        var style = {};
+        var style = {},
+            classes = ['fa'];
         if(this.state.collapsed) {
             style.display = 'none';
         }
 
+        if(children.length > 0) {
+            classes.push(this.state.collapsed ? 'fa-chevron-right' : 'fa-chevron-down');
+        }
+
         return React.createElement('div', {className:'line'},
-            React.createElement('i', {onClick: this.toggle, className: this.state.collapsed ? 'fa fa-chevron-right' : 'fa fa-chevron-down'}),
+            React.createElement('i', {onClick: this.toggle, className: classes.join(' ')}),
             React.createElement('pre', {}, value),
             React.createElement('ul', {style: style}, children)
         );
