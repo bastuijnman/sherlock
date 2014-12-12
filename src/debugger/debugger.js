@@ -1,4 +1,3 @@
-//import React from '../../../bower_components/react/react'; // Resolve from bin folder :(
 import TreeNode from 'components/treenode';
 import Console from 'components/console';
 import Network from 'components/network';
