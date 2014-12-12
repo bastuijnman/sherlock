@@ -1,0 +1,6 @@
+.idea
+bin
+bower_components
+demo
+node_modules
+src
