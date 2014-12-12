@@ -12,7 +12,7 @@ relative_permalinks: true
 title:               Sherlock
 tagline:             'Remote debugger'
 description:         'A lean mean debugger for your devices'
-url:                 http://bastuijnman.github.io/sherlock
+url:                 http://bastuijnman.github.io/sherlock/
 baseurl:             /
 paginate:            5
 
