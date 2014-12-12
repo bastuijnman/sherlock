@@ -23,7 +23,7 @@ export default function NetworkLogger(requestCallback, responseCallback) {
         XMLHttpRequest.prototype.send = function () {
             // TODO: Need fix for the request when calling the request callback
             // The reqeust is now not being sent when calling the callback
-            //requestCallback(this);
+            requestCallback(this);
             if (this.addEventListener) {
                 var self = this;
                 this.addEventListener("readystatechange", function () {
@@ -38,8 +38,11 @@ export default function NetworkLogger(requestCallback, responseCallback) {
 
     (function(setRequestHeader) {
         XMLHttpRequest.prototype.setRequestHeader = function(header, value) {
-            console.log(header, value);
-
+            if(typeof this.requestHeaders === 'undefined') {
+                this.requestHeaders = [];
+            }
+            this.requestHeaders.push(header + ':' + value);
+            
             setRequestHeader.apply(this, arguments);
         }
     }(XMLHttpRequest.prototype.setRequestHeader));

@@ -10,10 +10,9 @@ if (typeof io !== 'undefined') {
         logger = new Logger(socket),
         networkLogger = new NetworkLogger(
             function(xhr) {
-                // TODO: emit data to socket with type 'request'
+                console.log('test');
             },
             function(xhr) {
-                console.log(xhr);
                 socket.emit('network', {
                     'type': 'response',
                     'data': XhrTransformer(xhr)

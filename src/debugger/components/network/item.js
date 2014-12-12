@@ -1,3 +1,5 @@
+import ItemDetails from 'components/network/item/details';
+
 var Item = React.createClass({
 
     getInitialState: function() {
@@ -24,12 +26,13 @@ var Item = React.createClass({
             classes.push('active');
         }
 
-        return React.createElement('div', {className: classes.join(' '), onClick: this.toggle},
-            React.createElement('div', {className: 'info'},
+        return React.createElement('div', {className: classes.join(' ')},
+            React.createElement('div', {className: 'info', onClick: this.toggle},
                 React.createElement('span', {className: 'status'}, item.request.status),
                 React.createElement('span', {className: 'filename'}, filename),
                 React.createElement('span', {className: 'filepath'}, filepath)
-            )
+            ),
+            React.createElement(ItemDetails, { item: item })
         );
     },
 

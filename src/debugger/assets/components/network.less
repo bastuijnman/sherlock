@@ -18,6 +18,29 @@
 			color: rgba(0, 0, 0, 0.6);
 			text-decoration: underline;
 		}
+
+		.detail {
+			display: none;
+
+			.tabs-nav > a {
+				width: 25%;
+				display: inline-block;
+				font-weight: bold;
+			}
+
+			.tabs-content > .content {
+				display: none;
+				&.active {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.item.active {
+		.detail {
+			display: block;
+		}
 	}
 
 }
