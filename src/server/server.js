@@ -1,4 +1,4 @@
-module.exports = function(port) {
+module.exports = function(port, host) {
     var serverHandler = require('./handler'),
         server = require('http').createServer(serverHandler),
         io = require('socket.io')(server);
@@ -28,6 +28,6 @@ module.exports = function(port) {
         });
     });
 
-    server.listen(port);
-    console.log('Roger that Watson, doing research at port: ', port);
+    server.listen(port, host);
+    console.log('Roger that Watson, doing research at ' + host + ': ' + port);
 }

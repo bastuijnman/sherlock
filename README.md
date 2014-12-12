@@ -20,4 +20,5 @@ Note: you may need to use `sudo` for this
 ## Options
 ```
 -p, --port      Set the port sherlock runs on (default 7890)
+-h, --host		Set the host address sherlock runs on (defaults to localhost)
 ```
