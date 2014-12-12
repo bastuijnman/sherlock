@@ -1,5 +1,5 @@
 import Logger from 'logger';
-import CssTransformer from 'css/transformer';
+import CssTransformer from 'transformer/css';
 
 if (typeof io !== 'undefined') {
 
