@@ -1,6 +1,6 @@
 var Response = React.createClass({
 	render: function() {
-		return React.createElement('span', {}, this.props.item.response.responseText);
+		return React.createElement('span', { className: 'response' }, this.props.item.response.responseText);
 	}
 });
 
