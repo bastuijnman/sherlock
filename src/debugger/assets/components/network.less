@@ -22,16 +22,40 @@
 		.detail {
 			display: none;
 
+			.tabs-nav {
+				width: 100%;
+				margin-top: 1em;
+				padding: 1em 1em 0 1em;
+				margin-left: -1em;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			}
+
 			.tabs-nav > a {
-				width: 25%;
 				display: inline-block;
 				font-weight: bold;
+				padding: 0.5em;
+
+				&.active {
+					border: 1px solid rgba(0, 0, 0, 0.1);
+					border-bottom: none;
+				}
+			}
+
+			.tabs-content {
+				margin-top: 1em;
 			}
 
 			.tabs-content > .content {
 				display: none;
 				&.active {
 					display: block;
+				}
+			}
+
+			.header {
+				font-size: 0.75em;
+				.key {
+					font-weight: bold;
 				}
 			}
 		}

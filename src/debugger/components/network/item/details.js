@@ -10,7 +10,12 @@ var tabs = ['headers', 'preview', 'response', 'timing'],
 
 		render: function() {
 			var items = tabs.map(function(item) {
-				return React.createElement('a', { onClick: this.click.bind(this, item) }, item)
+				var classes = [];
+				
+				if(this.props.activeTab === item)
+					classes.push('active');
+
+				return React.createElement('a', { className: classes.join(' '), onClick: this.click.bind(this, item) }, item)
 			}.bind(this));
 
 			return React.createElement('div', {className:'tabs-nav'}, items);
@@ -57,7 +62,7 @@ var tabs = ['headers', 'preview', 'response', 'timing'],
 
 		render: function() {
 			return React.createElement('div', {className:'detail'}, 
-				React.createElement(TabSwitcher, { onTabClick: this.handleTabClick }),
+				React.createElement(TabSwitcher, { onTabClick: this.handleTabClick, activeTab: this.state.activeTab }),
 				React.createElement(TabContent, { activeTab: this.state.activeTab, item: this.props.item })
 			);
 		}
