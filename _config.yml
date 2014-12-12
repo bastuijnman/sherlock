@@ -13,7 +13,7 @@ title:               Sherlock
 tagline:             'Remote debugger'
 description:         'A lean mean debugger for your devices'
 url:                 http://bastuijnman.github.io/sherlock
-baseurl:             /sherlock/
+baseurl:             /
 paginate:            5
 
 # About/contact
