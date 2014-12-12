@@ -1,6 +1,6 @@
 //import React from '../../../bower_components/react/react'; // Resolve from bin folder :(
-import TreeNode from 'components/treenode';
 import Console from 'components/console';
+import DOM from 'components/dom';
 import Logger from 'logger';
 import Router from 'router';
 import Utils from 'utils';
@@ -11,7 +11,7 @@ import Utils from 'utils';
 
         socket.on('dom', function (data) {
             React.renderComponent(
-                React.createElement(TreeNode, {node: data.dom}),
+                React.createElement(DOM, {dom: data.dom}),
                 document.getElementById('elements')
             );
         });

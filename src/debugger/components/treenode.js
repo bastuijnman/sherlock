@@ -1,4 +1,5 @@
-var TreeNode = React.createClass({
+var rootEvent,
+    TreeNode = React.createClass({
 
     getInitialState: function() {
         return {
@@ -12,13 +13,22 @@ var TreeNode = React.createClass({
         });
     },
 
+    onSelectItem: function() {
+        // Proxy through to DOM container
+        this.props.onSelectItem(this.props.node);
+    },
+
     render: function() {
+
+        if(typeof rootEvent === 'undefined') {
+            rootEvent = this.props.onSelectItem;
+        }
 
         var children = this.props.node.children.map(function(node, index) {
             return React.createElement('li', null,
-                React.createElement(TreeNode, { node: node})
+                React.createElement(TreeNode, { node: node, onSelectItem:rootEvent})
             );
-        });
+        }.bind(this));
 
         var attrs = [];
         if(typeof this.props.node.attrs !== 'undefined') {
@@ -50,7 +60,7 @@ var TreeNode = React.createClass({
 
         return React.createElement('div', {className:'line'},
             React.createElement('i', {onClick: this.toggle, className: classes.join(' ')}),
-            React.createElement('pre', {}, value),
+            React.createElement('pre', {onClick:this.onSelectItem}, value),
             React.createElement('ul', {style: style}, children)
         );
     }
