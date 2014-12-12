@@ -10,7 +10,7 @@ if (typeof io !== 'undefined') {
         logger = new Logger(socket),
         networkLogger = new NetworkLogger(
             function(xhr) {
-                console.log('test');
+                
             },
             function(xhr) {
                 socket.emit('network', {
