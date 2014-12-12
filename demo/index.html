@@ -27,7 +27,10 @@
 
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', 'index.html');
-                xhr.setRequestHeader('X-Test', 'blaaaat');
+                xhr.send(null);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'http://ip.jsontest.com/');
                 xhr.send(null);
             }, 2000);
         })();
