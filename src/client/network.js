@@ -1,4 +1,5 @@
 export default function NetworkLogger(requestCallback, responseCallback) {
+
     var COMPLETED_READY_STATE = 4;
 
     function callResponseCallback(xhr) {
@@ -33,6 +34,13 @@ export default function NetworkLogger(requestCallback, responseCallback) {
             }
             send.apply(this, arguments);
         }
-
     }(XMLHttpRequest.prototype.send));
+
+    (function(setRequestHeader) {
+        XMLHttpRequest.prototype.setRequestHeader = function(header, value) {
+            console.log(header, value);
+
+            setRequestHeader.apply(this, arguments);
+        }
+    }(XMLHttpRequest.prototype.setRequestHeader));
 };

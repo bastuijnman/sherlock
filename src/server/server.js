@@ -23,8 +23,8 @@ module.exports = function(port) {
             io.sockets.emit('console', data);
         });
 
-        socket.on('networkconsole', function(data) {
-            io.sockets.emit('networkconsole', data);
+        socket.on('network', function(data) {
+            io.sockets.emit('network', data);
         });
     });
 

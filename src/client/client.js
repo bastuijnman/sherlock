@@ -1,6 +1,9 @@
 import Logger from 'logger';
 import NetworkLogger from 'network';
 
+// Data transformers
+import XhrTransformer from 'transformer/xhr';
+
 if (typeof io !== 'undefined') {
 
     var socket = new io('http://localhost:7890'),
@@ -10,9 +13,10 @@ if (typeof io !== 'undefined') {
                 // TODO: emit data to socket with type 'request'
             },
             function(xhr) {
-                socket.emit('networkconsole', {
+                console.log(xhr);
+                socket.emit('network', {
                     'type': 'response',
-                    'data': xhr
+                    'data': XhrTransformer(xhr)
                 });
             }
         );

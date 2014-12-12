@@ -1,6 +1,6 @@
 export default function NetworkLogger(container, socket) {
 
-    socket.on('networkconsole', function(data) {
+    socket.on('network', function(data) {
 
         container.add({
             type: 'html',

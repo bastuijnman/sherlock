@@ -24,6 +24,11 @@
                     property2: 'test'
                 });
                 console.log(document.getElementById('header'));
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'index.html');
+                xhr.setRequestHeader('X-Test', 'blaaaat');
+                xhr.send(null);
             }, 2000);
         })();
     </script>

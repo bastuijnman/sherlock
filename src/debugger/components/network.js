@@ -1,4 +1,4 @@
-import Item from 'components/networkconsole/item';
+import Item from 'components/network/item';
 
 var NetworkConsole = React.createClass({
 

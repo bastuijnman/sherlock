@@ -1,7 +1,7 @@
 //import React from '../../../bower_components/react/react'; // Resolve from bin folder :(
 import TreeNode from 'components/treenode';
 import Console from 'components/console';
-import NetworkConsole from 'components/networkconsole';
+import Network from 'components/network';
 import Logger from 'logger';
 import NetworkLogger from 'networklogger';
 import Router from 'router';
@@ -19,7 +19,7 @@ import Utils from 'utils';
         });
 
         NetworkLogger(React.renderComponent(
-            React.createElement(NetworkConsole),
+            React.createElement(Network),
             document.getElementById('network')
         ), socket);
 
