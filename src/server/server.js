@@ -22,6 +22,10 @@ module.exports = function(port, host) {
             }
             io.sockets.emit('console', data);
         });
+
+        socket.on('network', function(data) {
+            io.sockets.emit('network', data);
+        });
     });
 
     server.listen(port, host);

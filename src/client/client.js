@@ -1,9 +1,24 @@
 import Logger from 'logger';
+import NetworkLogger from 'network';
+
+// Data transformers
+import XhrTransformer from 'transformer/xhr';
 
 if (typeof io !== 'undefined') {
 
     var socket = new io('http://localhost:7890'),
-        logger = new Logger(socket);
+        logger = new Logger(socket),
+        networkLogger = new NetworkLogger(
+            function(xhr) {
+                
+            },
+            function(xhr) {
+                socket.emit('network', {
+                    'type': 'response',
+                    'data': XhrTransformer(xhr)
+                });
+            }
+        );
 
     /**
      * Dirty hack to send loaded DOM when window is loaded

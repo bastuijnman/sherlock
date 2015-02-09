@@ -24,6 +24,14 @@
                     property2: 'test'
                 });
                 console.log(document.getElementById('header'));
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'index.html');
+                xhr.send(null);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'http://ip.jsontest.com/');
+                xhr.send(null);
             }, 2000);
         })();
     </script>

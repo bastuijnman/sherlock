@@ -1,0 +1,80 @@
+#network {
+	
+	.item {
+		padding: 1em;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+		.status {
+			float: right;
+			line-height: 1.75em;
+		}
+
+		.filename, .filepath {
+			display: block;
+		}
+
+		.filepath {
+			font-size: 0.75em;
+			color: rgba(0, 0, 0, 0.6);
+			text-decoration: underline;
+		}
+
+		.detail {
+			display: none;
+
+			.tabs-nav {
+				width: 100%;
+				margin-top: 1em;
+				padding: 1em 1em 0 1em;
+				margin-left: -1em;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			}
+
+			.tabs-nav > a {
+				cursor: pointer;
+				display: inline-block;
+				font-weight: bold;
+				padding: 0.5em;
+
+				border: 1px solid rgba(0, 0, 0, 0);
+				border-bottom: none;
+
+				&.active {
+					border-color: rgba(0, 0, 0, 0.1);
+				}
+			}
+
+			.tabs-content {
+				margin-top: 1em;
+			}
+
+			.tabs-content > .content {
+				display: none;
+				&.active {
+					display: block;
+				}
+			}
+
+			.header {
+				font-size: 0.75em;
+				padding: 0.5em 0 0 0;
+				.key {
+					font-weight: bold;
+				}
+			}
+
+			.response {
+				white-space: pre-wrap;
+				font-size: 0.75em;
+				font-family: monaco, monospace;
+			}
+		}
+	}
+
+	.item.active {
+		.detail {
+			display: block;
+		}
+	}
+
+}
